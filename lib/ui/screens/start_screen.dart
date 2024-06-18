@@ -1,13 +1,10 @@
 import 'package:animated_background/animated_background.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neon_widgets/neon_widgets.dart';
 import 'package:provider/provider.dart';
-import 'package:xo_app/ui/game_screen.dart';
+import 'package:xo_app/ui/screens/game_screen.dart';
 import 'package:xo_app/ui/providers/game_provider.dart';
-import 'package:xo_app/ui/reusable%20components/neon_container.dart';
 
 class StartScreen extends StatefulWidget {
   static const String routeName = "/StartScreen";
@@ -29,14 +26,14 @@ class _StartScreenState extends State<StartScreen>
         color: const Color(0xff2B0040),
         child: AnimatedBackground(
           behaviour: RandomParticleBehaviour(
-            options: const ParticleOptions(
-              spawnMaxRadius: 30,
+            options: ParticleOptions(
+              spawnMaxRadius: 30.r,
               spawnMinSpeed: 10.00,
               particleCount: 30,
               spawnMaxSpeed: 50,
               minOpacity: 0.1,
               spawnOpacity: 0.2,
-              image: Image(image: AssetImage('assets/xo.png')),
+              image: const Image(image: AssetImage('assets/xo.png')),
             ),
           ),
           vsync: this,
@@ -54,10 +51,10 @@ class _StartScreenState extends State<StartScreen>
                           "assets/_8719a1d6-4f2f-4c90-af8e-550a36df4828.jpeg"),
                       SizedBox(height: 40.h),
                       NeonContainer(
-                        lightBlurRadius: 5,
+                        lightBlurRadius: 5.r,
                         containerColor: Colors.white,
                         spreadColor: Colors.purple,
-                        lightSpreadRadius: 8,
+                        lightSpreadRadius: 8.r,
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
@@ -102,6 +99,7 @@ class _StartScreenState extends State<StartScreen>
                           Navigator.of(context).pushNamed(GameScreen.routeName);
                           player1Controller.text = "";
                           player2Controller.text = "";
+                          providergame.resetGame();
                         },
                         child: NeonContainer(
                           height: 60.h,
@@ -114,22 +112,6 @@ class _StartScreenState extends State<StartScreen>
                           ),
                         ),
                       ),
-                      // NeonContainer(
-                      //   child: ElevatedButton(
-                      //     style: ButtonStyle(
-                      //         shape: MaterialStateProperty.all(
-                      //             const RoundedRectangleBorder())),
-                      //     onPressed: () {
-                      //       providergame.changePlayerName(
-                      //         player1: _player1Controller.text,
-                      //         player2: _player2Controller.text,
-                      //       );
-                      //       Navigator.of(context)
-                      //           .pushNamed(GameScreen.routeName);
-                      //     },
-                      //     child: const Text('Start'),
-                      //   ),
-                      // ),
                     ],
                   ),
                 ),

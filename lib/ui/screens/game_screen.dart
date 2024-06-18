@@ -22,14 +22,14 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
       color: const Color(0xff2B0040),
       child: AnimatedBackground(
         behaviour: RandomParticleBehaviour(
-          options: const ParticleOptions(
-            spawnMaxRadius: 30,
+          options: ParticleOptions(
+            spawnMaxRadius: 30.r,
             spawnMinSpeed: 10.00,
             particleCount: 30,
             spawnMaxSpeed: 50,
             minOpacity: 0.1,
             spawnOpacity: 0.2,
-            image: Image(image: AssetImage('assets/xo.png')),
+            image: const Image(image: AssetImage('assets/xo.png')),
           ),
         ),
         vsync: this,

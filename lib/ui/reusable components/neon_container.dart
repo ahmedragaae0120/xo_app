@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:neon_widgets/neon_widgets.dart';
 
 class NeonContainerCustom extends StatelessWidget {
@@ -21,14 +22,14 @@ class NeonContainerCustom extends StatelessWidget {
   Widget build(BuildContext context) {
     return winner
         ? NeonContainer(
-            width: 100,
-            height: 100,
-            borderRadius: BorderRadius.circular(10),
+            width: 150.w,
+            height: 100.h,
+            borderRadius: BorderRadius.circular(10.r),
             borderColor: bordercolor,
             containerColor: containercolor,
             spreadColor: spreadcolor,
-            lightSpreadRadius: 2,
-            lightBlurRadius: 15,
+            lightSpreadRadius: 2.r,
+            lightBlurRadius: 15.r,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -37,13 +38,13 @@ class NeonContainerCustom extends StatelessWidget {
                   children: [
                     Text(
                       "$playerName ",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 20),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 20.sp),
                     ),
                     Text(
                       "$score",
-                      style: const TextStyle(
-                          fontWeight: FontWeight.w500, fontSize: 20),
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500, fontSize: 20.sp),
                     ),
                   ],
                 )
@@ -52,11 +53,11 @@ class NeonContainerCustom extends StatelessWidget {
           )
         : Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
+              borderRadius: BorderRadius.circular(10.r),
               color: bordercolor.withOpacity(0.20),
             ),
-            width: 100,
-            height: 100,
+            width: 150.w,
+            height: 100.h,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -65,16 +66,16 @@ class NeonContainerCustom extends StatelessWidget {
                   children: [
                     Text(
                       "$playerName ",
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 20,
+                          fontSize: 28.sp,
                           overflow: TextOverflow.ellipsis),
                     ),
                     Text(
                       "$score",
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.w500,
-                          fontSize: 20,
+                          fontSize: 30.sp,
                           overflow: TextOverflow.ellipsis),
                     ),
                   ],

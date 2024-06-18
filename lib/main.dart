@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
-import 'package:xo_app/ui/game_screen.dart';
+import 'package:xo_app/ui/screens/game_screen.dart';
 import 'package:xo_app/ui/providers/game_provider.dart';
-import 'package:xo_app/ui/start_screen.dart';
+import 'package:xo_app/ui/screens/start_screen.dart';
 
 void main() {
   runApp(ChangeNotifierProvider(
