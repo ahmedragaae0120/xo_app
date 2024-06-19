@@ -99,12 +99,13 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
                                 providergame.addgame(index, "assets/x.svg");
                                 providergame.x_plays[index] = 1;
                                 if (providergame
-                                    .checkWinner(providergame.x_plays)) {
+                                        .checkWinner(providergame.x_plays) &&
+                                    providergame.p1_win == false) {
                                   providergame.score_p1++;
                                   providergame.p1_win = true;
                                   providergame
                                       .playsound("assets/sounds/wingame.mp3");
-                                  Future.delayed(const Duration(seconds: 1),
+                                  Future.delayed(const Duration(seconds: 2),
                                       () {
                                     setState(() {
                                       providergame.resetGame();
@@ -117,12 +118,13 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
                                 providergame.addgame(index, "assets/o.svg");
                                 providergame.o_plays[index] = 1;
                                 if (providergame
-                                    .checkWinner(providergame.o_plays)) {
+                                        .checkWinner(providergame.o_plays) &&
+                                    providergame.p2_win == false) {
                                   providergame.score_p2++;
                                   providergame.p2_win = true;
                                   providergame
                                       .playsound("assets/sounds/wingame.mp3");
-                                  Future.delayed(const Duration(seconds: 1),
+                                  Future.delayed(const Duration(seconds: 2),
                                       () {
                                     setState(() {
                                       providergame.resetGame();
@@ -139,7 +141,7 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
                                 providergame.draw = true;
                                 providergame
                                     .playsound("assets/sounds/wingame.mp3");
-                                Future.delayed(const Duration(seconds: 1), () {
+                                Future.delayed(const Duration(seconds: 2), () {
                                   setState(() {
                                     providergame.resetGame();
                                     providergame.draw = false;

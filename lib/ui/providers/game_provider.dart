@@ -30,6 +30,7 @@ class GameProvider extends ChangeNotifier {
   List<int> o_plays = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 
   void addgame(int index, String symbol) {
+    if (p1_win == true || p2_win == true) return;
     game[index] = SvgPicture.asset(symbol);
     notifyListeners();
   }
