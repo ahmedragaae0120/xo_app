@@ -97,6 +97,8 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
                             if (providergame.game[index] == null) {
                               if (providergame.counter % 2 == 0) {
                                 providergame.addgame(index, "assets/x.svg");
+                                if (providergame.p1_win == true ||
+                                    providergame.p2_win == true) return;
                                 providergame.x_plays[index] = 1;
                                 if (providergame
                                         .checkWinner(providergame.x_plays) &&
@@ -110,12 +112,15 @@ class _GameScreenState extends State<GameScreen> with TickerProviderStateMixin {
                                     setState(() {
                                       providergame.resetGame();
                                       providergame.p1_win = false;
+                                      return;
                                     });
                                   });
                                   return;
                                 }
                               } else {
                                 providergame.addgame(index, "assets/o.svg");
+                                if (providergame.p1_win == true ||
+                                    providergame.p2_win == true) return;
                                 providergame.o_plays[index] = 1;
                                 if (providergame
                                         .checkWinner(providergame.o_plays) &&
